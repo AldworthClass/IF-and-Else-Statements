@@ -10,9 +10,9 @@ namespace IF_and_Else_Statements
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("5.2 Task 1 - Weekday");
+            Console.WriteLine("5.2 Task 1 - Multiple Choice");
             Console.WriteLine("-------------------------");
-            Task1Weekday();
+            Task1MultipleChoice();
             Console.WriteLine();
             Console.WriteLine();
 
@@ -26,68 +26,39 @@ namespace IF_and_Else_Statements
             Console.ReadLine();
         }
 
-
-        // This method will accept an integer representing the day of the week, and return a string representation of that day
-        public static string WeekdayName(int day)
+        // Task 1 - Weekday
+        public static void Task1MultipleChoice()
         {
-            string result = "";
-            if (day == 1)
+            string choice;
+            Console.WriteLine("Who is the greatest Starship Captain?");
+            Console.WriteLine("a - Captain James Kirk                b - Captain Crunch");
+            Console.WriteLine("c - Captain Jean Luc Picard           d - Captain Han Solo");
+            Console.WriteLine();
+            Console.Write(">>");
+            choice = Console.ReadLine().ToLower();  //  You can convert to lowercase so it is not case sensitive.
+            Console.WriteLine();
+            if (choice == "a")
             {
-                result = "Monday";
+                Console.WriteLine("Good guess, but Kirk is no Picard.");
             }
-            else if (day == 2)
+            else if (choice == "b")
             {
-                result = "Tuesday";
+                Console.WriteLine("I said starship captain!  Althoguh he does make an good cereal.");
             }
-            else if (day == 3)
+            else if (choice == "c")
             {
-                result = "Wednesday";
+                Console.WriteLine("This is the only correct answer.");
             }
-            else if (day == 4)
+            else if (choice == "d")
             {
-                result = "Thursday";
-            }
-            else if (day == 5)
-            {
-                result = "Friday";
-            }
-            else if (day == 6)
-            {
-                result = "Saturday";
-            }
-            else if (day == 7 || day == 0)  // the || in this condition means "or"
-            {
-                result = "Sunday";
+                Console.WriteLine("Being in charge of a single wookie doesn't make you a great captain.");
             }
             else
             {
-                result = "error";
+                Console.WriteLine("You have made an invalid selection.  To the brig...");
             }
 
-            return result;
-        }
 
-        // Task 1 - Weekday
-        public static void Task1Weekday()
-        {
-            // This will get the current date from the computer
-            DateTime localDate = DateTime.Now;
-            int today = (int)localDate.DayOfWeek;
-
-            Console.WriteLine("Weekday 1: " + WeekdayName(1));
-            Console.WriteLine("Weekday 2: " + WeekdayName(2));
-            Console.WriteLine("Weekday 3: " + WeekdayName(3));
-            Console.WriteLine("Weekday 4: " + WeekdayName(4));
-            Console.WriteLine("Weekday 5: " + WeekdayName(5));
-            Console.WriteLine("Weekday 6: " + WeekdayName(6));
-            Console.WriteLine("Weekday 7: " + WeekdayName(7));
-            Console.WriteLine("Weekday 0: " + WeekdayName(0));
-            Console.WriteLine();
-            Console.WriteLine("Weekday 43: " + WeekdayName(43));
-            Console.WriteLine("Weekday 17: " + WeekdayName(17));
-            Console.WriteLine("Weekday -1: " + WeekdayName(-1));
-            Console.WriteLine();
-            Console.WriteLine("Today's is a " + WeekdayName(today));
         }
 
         // 5.2 Task 2 - How Old Are You Revisited

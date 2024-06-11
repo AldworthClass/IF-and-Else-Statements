@@ -16,9 +16,15 @@ namespace IF_and_Else_Statements
             Console.WriteLine();
             Console.WriteLine();
 
-            Console.WriteLine("5.2 Task 2 - How Old Are You? Revisited");
+            Console.WriteLine("5.2 Task 1 - The State of Water");
+            Console.WriteLine("-------------------------");
+            Task2WaterState();
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine("5.2 Task 3 - How Old Are You? Revisited");
             Console.WriteLine("----------------------------");
-            Task2HowOldAreYouRevisited();
+            Task3HowOldAreYouRevisited();
             Console.WriteLine();
             Console.WriteLine();
 
@@ -60,9 +66,29 @@ namespace IF_and_Else_Statements
 
 
         }
+        // 5.2 Task 2 - The State of Water
+        public static void Task2WaterState()
+        {
+            int temp;
+            Console.WriteLine("Please enter the temperature of the H2O: ");
+            if (int.TryParse(Console.ReadLine(), out temp))
+            {
+                if (temp <= 0)
+                    Console.WriteLine("You have a solid.");
+                else if (temp < 100)
+                    Console.WriteLine("You have liquid!");
+                else
+                    Console.WriteLine("You have gas!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input");
+            }
+        }
 
-        // 5.2 Task 2 - How Old Are You Revisited
-        public static void Task2HowOldAreYouRevisited()
+
+        // 5.2 Task 3 - How Old Are You Revisited
+        public static void Task3HowOldAreYouRevisited()
         {
             string name;
             int age;
@@ -70,28 +96,35 @@ namespace IF_and_Else_Statements
             name = Console.ReadLine();
             Console.WriteLine();
             Console.Write("Ok, " + name + ", how old are you?  ");
-            age = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-            if (age < 0)
+            if (int.TryParse(Console.ReadLine(), out age))  // Verifies numeric input
             {
-                Console.WriteLine("I didn't know fetuses could use a computer!");
-            }
-            else if (age < 16)
-            {
-                Console.WriteLine("You can't drive.");
-            }
-            else if (age < 18)
-            {
-                Console.WriteLine("You can't vote.");
-            }
-            else if (age < 25)
-            {
-                Console.WriteLine("You can't rent a car.");
+                Console.WriteLine();
+                if (age < 0)
+                {
+                    Console.WriteLine("I didn't know fetuses could use a computer!");
+                }
+                else if (age < 16)
+                {
+                    Console.WriteLine("You can't drive.");
+                }
+                else if (age < 18)
+                {
+                    Console.WriteLine("You can't vote.");
+                }
+                else if (age < 25)
+                {
+                    Console.WriteLine("You can't rent a car.");
+                }
+                else
+                {
+                    Console.WriteLine("You can do anything that is legal.");
+                }
             }
             else
             {
-                Console.WriteLine("You can do anything that is legal.");
+                Console.WriteLine("Invalid Numeric Input");
             }
+            
         }
 
     }
